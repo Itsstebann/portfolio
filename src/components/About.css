@@ -30,6 +30,52 @@
   object-fit: cover;
 }
 
+.tech-grid-bg {
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-card);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 16px;
+  padding: 32px;
+  align-items: center;
+  justify-items: center;
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.2) 0%, rgba(0, 212, 170, 0.2) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-grid-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, transparent 30%, var(--bg-secondary) 150%);
+  pointer-events: none;
+}
+
+.tech-icon-float {
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.8);
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.3));
+  animation: floatIcon 4s ease-in-out infinite;
+  transition: var(--transition-smooth);
+}
+
+.tech-icon-float:hover {
+  color: var(--accent-primary);
+  transform: scale(1.2) !important;
+  filter: drop-shadow(0 0 20px var(--accent-primary));
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.05); }
+}
+
 .about-image-decoration {
   position: absolute;
   width: 100%;

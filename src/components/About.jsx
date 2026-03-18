@@ -1,5 +1,6 @@
 import { FiCode, FiMapPin, FiMail, FiCalendar } from 'react-icons/fi';
-import { FaPython } from 'react-icons/fa';
+import { FaPython, FaReact, FaRobot, FaDatabase, FaGithub } from 'react-icons/fa';
+import { SiJavascript, SiDocker, SiPostgresql, SiDjango } from 'react-icons/si';
 import './About.css';
 
 const About = () => {
@@ -14,20 +15,16 @@ const About = () => {
         <div className="about-grid">
           <div className="about-image-wrapper">
             <div className="about-image-card">
-              <div style={{
-                width: '100%',
-                height: '100%',
-                background: 'linear-gradient(135deg, #6c63ff 0%, #00d4aa 50%, #4facfe 100%)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '5rem',
-                fontFamily: 'var(--font-display)',
-                fontWeight: 800,
-                color: 'white',
-                textShadow: '0 4px 20px rgba(0,0,0,0.3)'
-              }}>
-                DE
+              <div className="tech-grid-bg">
+                <FaPython className="tech-icon-float" style={{ animationDelay: '0s' }} />
+                <FaReact className="tech-icon-float" style={{ animationDelay: '0.5s' }} />
+                <FaRobot className="tech-icon-float" style={{ animationDelay: '1s' }} />
+                <FaDatabase className="tech-icon-float" style={{ animationDelay: '1.5s' }} />
+                <SiJavascript className="tech-icon-float" style={{ animationDelay: '2s' }} />
+                <SiDocker className="tech-icon-float" style={{ animationDelay: '2.5s' }} />
+                <SiPostgresql className="tech-icon-float" style={{ animationDelay: '3s' }} />
+                <SiDjango className="tech-icon-float" style={{ animationDelay: '3.5s' }} />
+                <FaGithub className="tech-icon-float" style={{ animationDelay: '4s' }} />
               </div>
             </div>
             <div className="about-image-decoration"></div>
