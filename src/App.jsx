@@ -54,6 +54,10 @@ function App() {
       <Navbar />
       <Hero />
       
+      <div className="reveal-up">
+        <Experience />
+      </div>
+
       <div className="reveal-left">
         <About />
       </div>
@@ -64,10 +68,6 @@ function App() {
       
       <div className="reveal-up">
         <Projects />
-      </div>
-      
-      <div className="reveal-left">
-        <Experience />
       </div>
       
       <div className="reveal-scale">
