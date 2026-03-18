@@ -10,9 +10,19 @@ import Footer from './components/Footer';
 import './App.css';
 
 function App() {
+  // Global Mouse tracking for Spotlight effect
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
+      document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   // Scroll-triggered reveal animations
   useEffect(() => {
-    const reveals = document.querySelectorAll('.reveal');
+    const reveals = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right, .reveal-scale');
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -35,23 +45,35 @@ function App() {
 
   return (
     <div className="app">
+      {/* Dynamic Background Elements */}
+      <div className="tech-grid-overlay"></div>
+      <div className="global-spotlight"></div>
+      <div className="tracer-line left"></div>
+      <div className="tracer-line right"></div>
+
       <Navbar />
       <Hero />
-      <div className="reveal">
+      
+      <div className="reveal-left">
         <About />
       </div>
-      <div className="reveal">
+      
+      <div className="reveal-right">
         <Skills />
       </div>
-      <div className="reveal">
+      
+      <div className="reveal-up">
         <Projects />
       </div>
-      <div className="reveal">
+      
+      <div className="reveal-left">
         <Experience />
       </div>
-      <div className="reveal">
+      
+      <div className="reveal-scale">
         <Contact />
       </div>
+      
       <Footer />
     </div>
   );
