@@ -2,7 +2,7 @@ import './Experience.css';
 
 const experiences = [
   {
-    date: '2025 — Present',
+    date: '2025 — 2026 · 8 months',
     role: 'Software Engineer',
     company: 'Falabella',
     description: [
