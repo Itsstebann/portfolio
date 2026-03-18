@@ -9,7 +9,7 @@ const About = () => {
       <div className="container">
         <h3 className="section-title">About Me</h3>
         <p className="section-subtitle">
-          Get to know the developer behind the code
+          More about my background and approach
         </p>
 
         <div className="about-grid">
@@ -41,18 +41,18 @@ const About = () => {
 
           <div className="about-text">
             <h2>
-              Merging <span className="highlight">Business & Technology</span> to Build the Future
+              Connecting <span className="highlight">Business Strategy</span> with Engineering
             </h2>
             <p>
-              I'm David Esteban Rodríguez Cárdenas — a 20-year-old from Bogotá, Colombia 
-              studying <strong>Business Administration & Systems Engineering</strong>. I live 
-              at the intersection of business strategy and cutting-edge technology, using code 
-              to bridge the gap between data and decisions.
+              Hi, I'm David Esteban Rodríguez Cárdenas, a 20-year-old developer from Bogotá, Colombia. 
+              Currently, I'm pursuing two degrees simultaneously: <strong>Business Administration and Systems Engineering</strong>. 
+              This dual focus gives me a unique perspective on software development — I don't just write code; 
+              I look at how technology can solve actual operational problems and improve workflows.
             </p>
             <p>
-              My core is Python — from automation scripts and AI-powered tools to full-stack 
-              web applications. I believe the best software is born when engineering precision 
-              meets business insight, and that's exactly what I bring to every project.
+              My primary focus is <strong>Python</strong>. Whether it's building backend APIs, writing automation scripts 
+              to replace manual tasks, or exploring data integrations, I enjoy creating software that is efficient 
+              and genuinely useful. As I continue to learn and grow, I'm constantly adding new tools to my stack.
             </p>
 
             <div className="about-info-grid">

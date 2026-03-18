@@ -4,54 +4,21 @@ import './Projects.css';
 
 const projects = [
   {
-    title: 'AI Chat Assistant',
-    category: 'Artificial Intelligence',
+    title: 'Business Workflow Automation',
+    category: 'Python Scripting',
     description:
-      'A conversational AI chatbot built with LangChain and OpenAI, featuring memory, RAG retrieval, and a modern React frontend.',
-    tech: ['Python', 'LangChain', 'OpenAI', 'React', 'FastAPI'],
+      'A practical data collection and workflow automation script built to eliminate repetitive manual data entry tasks.',
+    tech: ['Python', 'Selenium', 'Pandas'],
     icon: <FaRobot />,
     gradient: 'linear-gradient(135deg, #ff6b9d, #f093fb)',
     github: 'https://github.com/itsstebann',
     live: '#',
   },
   {
-    title: 'Data Analytics Dashboard',
-    category: 'Data Science',
+    title: 'Developer Portfolio',
+    category: 'Full Stack Web',
     description:
-      'Interactive business intelligence dashboard with real-time visualizations, ETL pipelines, and automated reporting.',
-    tech: ['Python', 'Pandas', 'Power BI', 'PostgreSQL', 'Plotly'],
-    icon: <FaDatabase />,
-    gradient: 'linear-gradient(135deg, #ffd700, #ff6b9d)',
-    github: 'https://github.com/itsstebann',
-    live: '#',
-  },
-  {
-    title: 'Web Scraping Automation',
-    category: 'Automation',
-    description:
-      'Automated data collection system using Selenium and BeautifulSoup, with scheduled tasks, proxy rotation, and data cleaning.',
-    tech: ['Python', 'Selenium', 'BeautifulSoup', 'Docker', 'Celery'],
-    icon: <FaCloud />,
-    gradient: 'linear-gradient(135deg, #00d4aa, #4facfe)',
-    github: 'https://github.com/itsstebann',
-    live: '#',
-  },
-  {
-    title: 'ML Prediction Engine',
-    category: 'Machine Learning',
-    description:
-      'End-to-end machine learning pipeline for predictive analytics, including feature engineering, model training, and API deployment.',
-    tech: ['Python', 'Scikit-learn', 'TensorFlow', 'FastAPI', 'Docker'],
-    icon: <FaPython />,
-    gradient: 'linear-gradient(135deg, #3776AB, #FFD43B)',
-    github: 'https://github.com/itsstebann',
-    live: '#',
-  },
-  {
-    title: 'Portfolio Website',
-    category: 'Full Stack',
-    description:
-      'This portfolio site — a modern React + Vite single-page app with particle animations, glassmorphism design, and responsive layout.',
+      'My personal portfolio website built with React and Vite. Features a custom glassmorphism design, CSS animations, and responsive layout.',
     tech: ['React', 'Vite', 'CSS3', 'JavaScript'],
     icon: <FaReact />,
     gradient: 'linear-gradient(135deg, #6c63ff, #4facfe)',
@@ -66,7 +33,7 @@ const Projects = () => {
       <div className="container">
         <h3 className="section-title">Featured Projects</h3>
         <p className="section-subtitle">
-          A selection of projects that showcase my skills and passion for building
+          Projects I've built to solve real problems (more coming soon).
         </p>
 
         <div className="projects-grid">

@@ -85,7 +85,7 @@ const Skills = () => {
       <div className="container">
         <h3 className="section-title">Skills & Technologies</h3>
         <p className="section-subtitle">
-          The tools and technologies I use to bring ideas to life
+          The technical stack I use for engineering and data analysis.
         </p>
 
         <div className="skills-grid">

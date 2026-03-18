@@ -134,9 +134,9 @@ const Hero = () => {
         </div>
 
         <p className="hero-description">
-          Business Administration & Systems Engineering student passionate about 
-          Python development, AI, and building data-driven solutions that 
-          transform businesses — from Bogotá to the world.
+          Business Administration and Systems Engineering student based in Bogotá. 
+          I focus on bridging the gap between business processes and technical solutions, 
+          using Python to build practical automations, tools, and web applications.
         </p>
 
         <div className="hero-buttons">
@@ -160,12 +160,12 @@ const Hero = () => {
             <div className="stat-label">Years Experience</div>
           </div>
           <div className="hero-stat">
-            <div className="stat-number">10+</div>
-            <div className="stat-label">Projects Completed</div>
+            <div className="stat-number">2</div>
+            <div className="stat-label">Degrees in Progress</div>
           </div>
           <div className="hero-stat">
-            <div className="stat-number">15+</div>
-            <div className="stat-label">Technologies</div>
+            <div className="stat-number">10+</div>
+            <div className="stat-label">Tech Stack Tools</div>
           </div>
         </div>
       </div>

@@ -24,11 +24,11 @@ const Contact = () => {
         <div className="contact-grid">
           <div className="contact-info">
             <h3>
-              Let's Build Something <span className="highlight">Amazing</span>
+              Let's <span className="highlight">Connect</span>
             </h3>
             <p>
-              I'm always open to discussing new projects, creative ideas, or
-              opportunities to be part of your team. Feel free to reach out!
+              I'm always open to discussing tech, business ideas, or potential career opportunities. 
+              Whether you have a question or just want to say hi, I'll try my best to get back to you!
             </p>
 
             <div className="contact-methods">
