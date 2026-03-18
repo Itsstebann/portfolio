@@ -5,10 +5,10 @@ const Footer = () => {
     <footer className="footer">
       <div className="container">
         <div className="footer-logo">
-          David<span>.dev</span>
+          David Esteban<span>.dev</span>
         </div>
         <p className="footer-text">
-          © {new Date().getFullYear()} David. Built with React & ☕
+          © {new Date().getFullYear()} David Esteban Rodríguez. Built with React & ☕
         </p>
         <ul className="footer-links">
           <li><a href="#hero">Home</a></li>

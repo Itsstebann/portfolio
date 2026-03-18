@@ -21,13 +21,13 @@ const About = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: '6rem',
+                fontSize: '5rem',
                 fontFamily: 'var(--font-display)',
                 fontWeight: 800,
                 color: 'white',
                 textShadow: '0 4px 20px rgba(0,0,0,0.3)'
               }}>
-                D
+                DE
               </div>
             </div>
             <div className="about-image-decoration"></div>
@@ -36,43 +36,43 @@ const About = () => {
                 <FaPython />
               </div>
               <div className="badge-text">
-                <strong>3+ Years</strong>
-                <span>Python Development</span>
+                <strong>Python First</strong>
+                <span>Core Language</span>
               </div>
             </div>
           </div>
 
           <div className="about-text">
             <h2>
-              Crafting <span className="highlight">Digital Solutions</span> with Code & Data
+              Merging <span className="highlight">Business & Technology</span> to Build the Future
             </h2>
             <p>
-              I'm a passionate software developer specializing in Python, React, 
-              and cutting-edge AI technologies. I love turning complex problems 
-              into elegant, efficient solutions that make a real impact.
+              I'm David Esteban Rodríguez Cárdenas — a 20-year-old from Bogotá, Colombia 
+              studying <strong>Business Administration & Systems Engineering</strong>. I live 
+              at the intersection of business strategy and cutting-edge technology, using code 
+              to bridge the gap between data and decisions.
             </p>
             <p>
-              From building intelligent automation pipelines to crafting modern 
-              web applications, I combine technical expertise with creative 
-              problem-solving to deliver exceptional results. My focus on data-driven 
-              development ensures every project is built on solid analytical foundations.
+              My core is Python — from automation scripts and AI-powered tools to full-stack 
+              web applications. I believe the best software is born when engineering precision 
+              meets business insight, and that's exactly what I bring to every project.
             </p>
 
             <div className="about-info-grid">
               <div className="about-info-item">
                 <div className="info-icon"><FiCode /></div>
                 <div className="info-label">Specialization</div>
-                <div className="info-value">Full Stack & AI</div>
+                <div className="info-value">Python & AI</div>
               </div>
               <div className="about-info-item">
                 <div className="info-icon"><FiMapPin /></div>
                 <div className="info-label">Location</div>
-                <div className="info-value">Remote-Ready</div>
+                <div className="info-value">Bogotá, Colombia</div>
               </div>
               <div className="about-info-item">
                 <div className="info-icon"><FiMail /></div>
                 <div className="info-label">Email</div>
-                <div className="info-value">david@dev.com</div>
+                <div className="info-value">devstack.drodriguez@gmail.com</div>
               </div>
               <div className="about-info-item">
                 <div className="info-icon"><FiCalendar /></div>

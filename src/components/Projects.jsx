@@ -11,7 +11,7 @@ const projects = [
     tech: ['Python', 'LangChain', 'OpenAI', 'React', 'FastAPI'],
     icon: <FaRobot />,
     gradient: 'linear-gradient(135deg, #ff6b9d, #f093fb)',
-    github: '#',
+    github: 'https://github.com/itsstebann',
     live: '#',
   },
   {
@@ -22,18 +22,7 @@ const projects = [
     tech: ['Python', 'Pandas', 'Power BI', 'PostgreSQL', 'Plotly'],
     icon: <FaDatabase />,
     gradient: 'linear-gradient(135deg, #ffd700, #ff6b9d)',
-    github: '#',
-    live: '#',
-  },
-  {
-    title: 'E-Commerce Platform',
-    category: 'Full Stack',
-    description:
-      'Modern e-commerce application with user auth, payment processing, product catalog, and admin panel built with React & Django.',
-    tech: ['React', 'Django', 'PostgreSQL', 'Stripe', 'Redux'],
-    icon: <FaReact />,
-    gradient: 'linear-gradient(135deg, #61DAFB, #6c63ff)',
-    github: '#',
+    github: 'https://github.com/itsstebann',
     live: '#',
   },
   {
@@ -44,7 +33,7 @@ const projects = [
     tech: ['Python', 'Selenium', 'BeautifulSoup', 'Docker', 'Celery'],
     icon: <FaCloud />,
     gradient: 'linear-gradient(135deg, #00d4aa, #4facfe)',
-    github: '#',
+    github: 'https://github.com/itsstebann',
     live: '#',
   },
   {
@@ -55,19 +44,19 @@ const projects = [
     tech: ['Python', 'Scikit-learn', 'TensorFlow', 'FastAPI', 'Docker'],
     icon: <FaPython />,
     gradient: 'linear-gradient(135deg, #3776AB, #FFD43B)',
-    github: '#',
+    github: 'https://github.com/itsstebann',
     live: '#',
   },
   {
-    title: 'Task Management App',
+    title: 'Portfolio Website',
     category: 'Full Stack',
     description:
-      'Real-time collaborative task manager with drag-and-drop, user roles, notifications, and a polished UI built with Next.js.',
-    tech: ['Next.js', 'Supabase', 'TypeScript', 'Tailwind', 'Vercel'],
+      'This portfolio site — a modern React + Vite single-page app with particle animations, glassmorphism design, and responsive layout.',
+    tech: ['React', 'Vite', 'CSS3', 'JavaScript'],
     icon: <FaReact />,
     gradient: 'linear-gradient(135deg, #6c63ff, #4facfe)',
-    github: '#',
-    live: '#',
+    github: 'https://github.com/itsstebann/portfolio',
+    live: 'https://itsstebann.github.io/portfolio',
   },
 ];
 

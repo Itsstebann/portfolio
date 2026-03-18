@@ -2,28 +2,20 @@ import './Experience.css';
 
 const experiences = [
   {
-    date: '2024 — Present',
-    role: 'Python Developer & AI Engineer',
-    company: 'Freelance / Personal Projects',
+    date: '2025 — Present',
+    role: 'Software Engineer',
+    company: 'Falabella',
     description:
-      'Building AI-powered applications using LangChain, OpenAI, and TensorFlow. Developing full-stack web apps with React and Django. Creating automated data pipelines and ETL processes.',
-    tech: ['Python', 'React', 'LangChain', 'TensorFlow', 'FastAPI'],
+      'Developing web modules using Java and Spring Boot, enhancing user experience across Falabella\'s platforms. Implementing preventive maintenance routines that increased system stability. Integrating SQL databases and REST APIs to improve data flow between systems. Supporting the migration of legacy systems to modern, secure platforms. Building knowledge in WMOS (Warehouse Management Operating System).',
+    tech: ['Java', 'Spring Boot', 'SQL', 'REST APIs', 'WMOS'],
   },
   {
-    date: '2023 — 2024',
-    role: 'Full Stack Developer',
-    company: 'Tech Startup',
+    date: '2024 — 2025 · 7 months',
+    role: 'Systems Engineer — Process Improvement',
+    company: 'Karton SAS',
     description:
-      'Developed and maintained web applications using React and Django REST Framework. Implemented CI/CD pipelines, automated testing, and database optimization strategies.',
-    tech: ['Django', 'React', 'PostgreSQL', 'Docker', 'GitHub Actions'],
-  },
-  {
-    date: '2022 — 2023',
-    role: 'Data Analyst & Automation Engineer',
-    company: 'Business Solutions Company',
-    description:
-      'Created interactive dashboards with Power BI and automated data collection using Python and Selenium. Designed ETL pipelines to streamline reporting workflows.',
-    tech: ['Python', 'Pandas', 'Selenium', 'Power BI', 'SQL'],
+      'Improved system performance by 25% through infrastructure optimization. Designed automation workflows that reduced operational errors significantly. Collaborated with development and support teams to deploy scalable cloud solutions. Managed system monitoring and maintenance to ensure security and uptime.',
+    tech: ['Python', 'Cloud', 'CI/CD', 'Automation', 'Infrastructure'],
   },
 ];
 

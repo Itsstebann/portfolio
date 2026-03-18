@@ -1,12 +1,16 @@
 import { FiMail, FiMapPin, FiSend } from 'react-icons/fi';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Form submission logic
-    alert('Thanks for reaching out! I\'ll get back to you soon.');
+    const name = e.target.elements['contact-name'].value;
+    const email = e.target.elements['contact-email'].value;
+    const subject = e.target.elements['contact-subject'].value;
+    const message = e.target.elements['contact-message'].value;
+    const mailtoLink = `mailto:devstack.drodriguez@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio Contact')}&body=${encodeURIComponent(`Hi David,\n\nMy name is ${name} (${email}).\n\n${message}`)}`;
+    window.open(mailtoLink, '_blank');
   };
 
   return (
@@ -28,17 +32,17 @@ const Contact = () => {
             </p>
 
             <div className="contact-methods">
-              <div className="contact-method">
+              <a href="mailto:devstack.drodriguez@gmail.com" className="contact-method">
                 <div className="contact-method-icon">
                   <FiMail />
                 </div>
                 <div>
                   <div className="contact-method-label">Email</div>
                   <div className="contact-method-value">
-                    stevedavidrodrigues@hotmail.com
+                    devstack.drodriguez@gmail.com
                   </div>
                 </div>
-              </div>
+              </a>
               <div className="contact-method">
                 <div className="contact-method-icon">
                   <FiMapPin />
@@ -46,7 +50,7 @@ const Contact = () => {
                 <div>
                   <div className="contact-method-label">Location</div>
                   <div className="contact-method-value">
-                    Remote — Worldwide
+                    Bogotá, Colombia
                   </div>
                 </div>
               </div>
@@ -54,7 +58,7 @@ const Contact = () => {
 
             <div className="contact-socials">
               <a
-                href="https://github.com/"
+                href="https://github.com/itsstebann"
                 className="social-link"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -63,7 +67,7 @@ const Contact = () => {
                 <FaGithub />
               </a>
               <a
-                href="https://linkedin.com/"
+                href="https://www.linkedin.com/in/devdavidrodriguez"
                 className="social-link"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -72,13 +76,13 @@ const Contact = () => {
                 <FaLinkedin />
               </a>
               <a
-                href="https://twitter.com/"
+                href="https://instagram.com/itssteban_"
                 className="social-link"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Twitter"
+                aria-label="Instagram"
               >
-                <FaTwitter />
+                <FaInstagram />
               </a>
             </div>
           </div>
