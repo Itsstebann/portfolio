@@ -1,16 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import { FiArrowRight, FiDownload } from 'react-icons/fi';
 import './Hero.css';
-
-const roles = [
-  'Python Developer',
-  'AI Engineer',
-  'Data Analyst',
-  'Systems Engineer',
-  'Automation Expert',
-];
+import { useLanguage } from '../context/LanguageContext';
 
 const Hero = () => {
+  const { t } = useLanguage();
+  const roles = t('hero.roles');
   const [roleIndex, setRoleIndex] = useState(0);
   const [text, setText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -122,21 +117,19 @@ const Hero = () => {
       <div className="hero-content">
         <div className="hero-badge">
           <span className="dot"></span>
-          Available for new opportunities
+          {t('hero.availability')}
         </div>
 
         <h1>
-          Hi, I'm <span className="gradient-name">David Esteban</span>
+          {t('hero.hi')} <span className="gradient-name">David Esteban</span>
         </h1>
 
         <div className="hero-role">
-          I'm a&nbsp;<span className="typed-text">{text}</span>
+          {t('hero.rolePrefix')}&nbsp;<span className="typed-text">{text}</span>
         </div>
 
         <p className="hero-description">
-          Business Administration and Systems Engineering student based in Bogotá. 
-          I focus on bridging the gap between business processes and technical solutions, 
-          using Python to build practical automations, tools, and web applications.
+          {t('hero.description')}
         </p>
 
         <div className="hero-buttons">
@@ -144,35 +137,35 @@ const Hero = () => {
             e.preventDefault();
             document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
           }}>
-            View My Work <FiArrowRight />
+            {t('hero.viewWork')} <FiArrowRight />
           </a>
           <a href="#contact" className="btn-outline" onClick={(e) => {
             e.preventDefault();
             document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
           }}>
-            <FiDownload /> Get In Touch
+            <FiDownload /> {t('hero.getInTouch')}
           </a>
         </div>
 
         <div className="hero-stats">
           <div className="hero-stat">
             <div className="stat-number">1+</div>
-            <div className="stat-label">Years Experience</div>
+            <div className="stat-label">{t('hero.stats.experience')}</div>
           </div>
           <div className="hero-stat">
             <div className="stat-number">2</div>
-            <div className="stat-label">Degrees in Progress</div>
+            <div className="stat-label">{t('hero.stats.degrees')}</div>
           </div>
           <div className="hero-stat">
             <div className="stat-number">10+</div>
-            <div className="stat-label">Tech Stack Tools</div>
+            <div className="stat-label">{t('hero.stats.tools')}</div>
           </div>
         </div>
       </div>
 
       <div className="scroll-indicator">
         <div className="mouse"></div>
-        <span>Scroll</span>
+        <span>{t('hero.scroll')}</span>
       </div>
     </section>
   );

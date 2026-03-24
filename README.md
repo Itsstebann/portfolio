@@ -49,4 +49,4 @@ Siempre estoy abierto a discutir nuevos proyectos, ideas creativas o explorar op
 *   **Instagram:** [@itssteban_](https://instagram.com/itssteban_)
 
 ---
-*Hecho con ⚡ por David Esteban Rodríguez Cárdenas*
+*Hecho por David Esteban Rodríguez Cárdenas*

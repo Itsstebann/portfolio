@@ -1,39 +1,33 @@
 import './Experience.css';
-
-const experiences = [
-  {
-    date: '2025 — 2026 · 8 months',
-    role: 'Software Engineer',
-    company: 'Falabella',
-    description: [
-      'Developing web modules using Java and Spring Boot to enhance user experience.',
-      'Implementing preventive maintenance routines that increased system stability.',
-      'Integrating SQL databases and REST APIs to improve data flow between systems.',
-      'Building knowledge in WMOS (Warehouse Management Operating System).'
-    ],
-    tech: ['Java', 'Spring Boot', 'SQL', 'REST APIs', 'WMOS'],
-  },
-  {
-    date: '2024 — 2025 · 7 months',
-    role: 'Systems Engineer — Process Improvement',
-    company: 'Karton SAS',
-    description: [
-      'Improved system performance by 25% through infrastructure optimization.',
-      'Designed automation workflows that significantly reduced operational errors.',
-      'Collaborated with development teams to deploy scalable cloud solutions.',
-      'Managed system monitoring and maintenance, ensuring security and uptime.'
-    ],
-    tech: ['Python', 'Cloud', 'CI/CD', 'Automation', 'Infrastructure'],
-  },
-];
+import { useLanguage } from '../context/LanguageContext';
 
 const Experience = () => {
+  const { t } = useLanguage();
+  const expItems = t('experience.items');
+
+  const experiences = [
+    {
+      date: expItems[0].date,
+      role: expItems[0].role,
+      company: expItems[0].company,
+      description: expItems[0].desc,
+      tech: expItems[0].tech,
+    },
+    {
+      date: expItems[1].date,
+      role: expItems[1].role,
+      company: expItems[1].company,
+      description: expItems[1].desc,
+      tech: expItems[1].tech,
+    },
+  ];
+
   return (
     <section className="experience" id="experience">
       <div className="container">
-        <h3 className="section-title">Experience</h3>
+        <h3 className="section-title">{t('experience.title')}</h3>
         <p className="section-subtitle">
-          My professional journey and career milestones
+          {t('experience.subtitle')}
         </p>
 
         <div className="timeline">

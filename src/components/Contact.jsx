@@ -1,34 +1,35 @@
 import { FiMail, FiMapPin, FiSend } from 'react-icons/fi';
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import './Contact.css';
+import { useLanguage } from '../context/LanguageContext';
 
 const Contact = () => {
+  const { t } = useLanguage();
   const handleSubmit = (e) => {
     e.preventDefault();
     const name = e.target.elements['contact-name'].value;
     const email = e.target.elements['contact-email'].value;
     const subject = e.target.elements['contact-subject'].value;
     const message = e.target.elements['contact-message'].value;
-    const mailtoLink = `mailto:devstack.drodriguez@gmail.com?subject=${encodeURIComponent(subject || 'Portfolio Contact')}&body=${encodeURIComponent(`Hi David,\n\nMy name is ${name} (${email}).\n\n${message}`)}`;
+    const mailtoLink = `mailto:devstack.drodriguez@gmail.com?subject=${encodeURIComponent(subject || t('contact.form.defaultSubject'))}&body=${encodeURIComponent(`Hi David,\n\nMy name is ${name} (${email}).\n\n${message}`)}`;
     window.open(mailtoLink, '_blank');
   };
 
   return (
     <section className="contact" id="contact">
       <div className="container">
-        <h3 className="section-title">Get In Touch</h3>
+        <h3 className="section-title">{t('contact.title')}</h3>
         <p className="section-subtitle">
-          Have a project in mind? Let's work together to make it happen
+          {t('contact.subtitle')}
         </p>
 
         <div className="contact-grid">
           <div className="contact-info">
             <h3>
-              Let's <span className="highlight">Connect</span>
+              {t('contact.heading1')} <span className="highlight">{t('contact.headingConnect')}</span>
             </h3>
             <p>
-              I'm always open to discussing tech, business ideas, or potential career opportunities. 
-              Whether you have a question or just want to say hi, I'll try my best to get back to you!
+              {t('contact.p1')}
             </p>
 
             <div className="contact-methods">
@@ -37,7 +38,7 @@ const Contact = () => {
                   <FiMail />
                 </div>
                 <div>
-                  <div className="contact-method-label">Email</div>
+                  <div className="contact-method-label">{t('contact.methods.email')}</div>
                   <div className="contact-method-value">
                     devstack.drodriguez@gmail.com
                   </div>
@@ -48,7 +49,7 @@ const Contact = () => {
                   <FiMapPin />
                 </div>
                 <div>
-                  <div className="contact-method-label">Location</div>
+                  <div className="contact-method-label">{t('contact.methods.location')}</div>
                   <div className="contact-method-value">
                     Bogotá, Colombia
                   </div>
@@ -91,42 +92,42 @@ const Contact = () => {
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-row">
                 <div className="form-group">
-                  <label htmlFor="contact-name">Name</label>
+                  <label htmlFor="contact-name">{t('contact.form.name')}</label>
                   <input
                     type="text"
                     id="contact-name"
-                    placeholder="Your name"
+                    placeholder={t('contact.form.namePlaceholder')}
                     required
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="contact-email">Email</label>
+                  <label htmlFor="contact-email">{t('contact.form.email')}</label>
                   <input
                     type="email"
                     id="contact-email"
-                    placeholder="your@email.com"
+                    placeholder={t('contact.form.emailPlaceholder')}
                     required
                   />
                 </div>
               </div>
               <div className="form-group">
-                <label htmlFor="contact-subject">Subject</label>
+                <label htmlFor="contact-subject">{t('contact.form.subject')}</label>
                 <input
                   type="text"
                   id="contact-subject"
-                  placeholder="Project idea or collaboration"
+                  placeholder={t('contact.form.subjectPlaceholder')}
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="contact-message">Message</label>
+                <label htmlFor="contact-message">{t('contact.form.message')}</label>
                 <textarea
                   id="contact-message"
-                  placeholder="Tell me about your project..."
+                  placeholder={t('contact.form.messagePlaceholder')}
                   required
                 />
               </div>
               <button type="submit" className="btn-primary">
-                <FiSend /> Send Message
+                <FiSend /> {t('contact.form.send')}
               </button>
             </form>
           </div>

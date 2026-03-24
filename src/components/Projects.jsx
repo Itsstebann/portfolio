@@ -1,39 +1,41 @@
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import { FaPython, FaReact, FaRobot, FaDatabase, FaCloud } from 'react-icons/fa';
 import './Projects.css';
-
-const projects = [
-  {
-    title: 'Business Workflow Automation',
-    category: 'Python Scripting',
-    description:
-      'A practical data collection and workflow automation script built to eliminate repetitive manual data entry tasks.',
-    tech: ['Python', 'Selenium', 'Pandas'],
-    icon: <FaRobot />,
-    gradient: 'linear-gradient(135deg, #ff6b9d, #f093fb)',
-    github: 'https://github.com/itsstebann',
-    live: '#',
-  },
-  {
-    title: 'Developer Portfolio',
-    category: 'Full Stack Web',
-    description:
-      'My personal portfolio website built with React and Vite. Features a custom glassmorphism design, CSS animations, and responsive layout.',
-    tech: ['React', 'Vite', 'CSS3', 'JavaScript'],
-    icon: <FaReact />,
-    gradient: 'linear-gradient(135deg, #6c63ff, #4facfe)',
-    github: 'https://github.com/itsstebann/portfolio',
-    live: 'https://itsstebann.github.io/portfolio',
-  },
-];
+import { useLanguage } from '../context/LanguageContext';
 
 const Projects = () => {
+  const { t } = useLanguage();
+  const pItems = t('projects.items');
+
+  const projects = [
+    {
+      title: pItems[0].title,
+      category: pItems[0].category,
+      description: pItems[0].description,
+      tech: pItems[0].tech,
+      icon: <FaRobot />,
+      gradient: 'linear-gradient(135deg, #ff6b9d, #f093fb)',
+      github: 'https://github.com/itsstebann',
+      live: '#',
+    },
+    {
+      title: pItems[1].title,
+      category: pItems[1].category,
+      description: pItems[1].description,
+      tech: pItems[1].tech,
+      icon: <FaReact />,
+      gradient: 'linear-gradient(135deg, #6c63ff, #4facfe)',
+      github: 'https://github.com/itsstebann/portfolio',
+      live: 'https://itsstebann.github.io/portfolio',
+    },
+  ];
+
   return (
     <section className="projects" id="projects">
       <div className="container">
-        <h3 className="section-title">Featured Projects</h3>
+        <h3 className="section-title">{t('projects.title')}</h3>
         <p className="section-subtitle">
-          Projects I've built to solve real problems (more coming soon).
+          {t('projects.subtitle')}
         </p>
 
         <div className="projects-grid">
@@ -53,7 +55,7 @@ const Projects = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FiGithub /> Code
+                    <FiGithub /> {t('projects.btnCode')}
                   </a>
                   <a
                     href={project.live}
@@ -61,7 +63,7 @@ const Projects = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FiExternalLink /> Live
+                    <FiExternalLink /> {t('projects.btnLive')}
                   </a>
                 </div>
               </div>

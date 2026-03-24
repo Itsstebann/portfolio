@@ -9,83 +9,87 @@ import {
   SiPostgresql, SiMongodb, SiApacheairflow,
 } from 'react-icons/si';
 import './Skills.css';
-
-const skillCategories = [
-  {
-    title: 'Python',
-    description: 'Backend & scripting',
-    icon: <FaPython />,
-    color: 'linear-gradient(135deg, #3776AB, #FFD43B)',
-    skills: [
-      { name: 'Django', icon: <SiDjango /> },
-      { name: 'Flask', icon: <SiFlask /> },
-      { name: 'FastAPI', icon: <SiFastapi /> },
-      { name: 'Pandas', icon: <SiPandas /> },
-      { name: 'NumPy', icon: <SiNumpy /> },
-      { name: 'Python 3.12+', icon: <FaPython /> },
-    ],
-  },
-  {
-    title: 'React & Frontend',
-    description: 'Modern web apps',
-    icon: <FaReact />,
-    color: 'linear-gradient(135deg, #61DAFB, #6c63ff)',
-    skills: [
-      { name: 'React', icon: <FaReact /> },
-      { name: 'Next.js', icon: <SiNextdotjs /> },
-      { name: 'Redux', icon: <SiRedux /> },
-      { name: 'JavaScript', icon: <SiJavascript /> },
-      { name: 'Hooks & Context', icon: <FaReact /> },
-    ],
-  },
-  {
-    title: 'Automation',
-    description: 'CI/CD & testing',
-    icon: <FaCloud />,
-    color: 'linear-gradient(135deg, #00d4aa, #4facfe)',
-    skills: [
-      { name: 'Selenium', icon: <SiSelenium /> },
-      { name: 'Docker', icon: <SiDocker /> },
-      { name: 'GitHub Actions', icon: <SiGithubactions /> },
-      { name: 'REST APIs', icon: <FaCloud /> },
-      { name: 'Web Scraping', icon: <FaPython /> },
-    ],
-  },
-  {
-    title: 'AI & Machine Learning',
-    description: 'Intelligent systems',
-    icon: <FaRobot />,
-    color: 'linear-gradient(135deg, #ff6b9d, #f093fb)',
-    skills: [
-      { name: 'TensorFlow', icon: <SiTensorflow /> },
-      { name: 'Scikit-learn', icon: <SiScikitlearn /> },
-      { name: 'OpenAI API', icon: <SiOpenai /> },
-      { name: 'LangChain', icon: <SiLangchain /> },
-      { name: 'NLP', icon: <FaRobot /> },
-    ],
-  },
-  {
-    title: 'Data & Databases',
-    description: 'Analytics & storage',
-    icon: <FaDatabase />,
-    color: 'linear-gradient(135deg, #ffd700, #ff6b9d)',
-    skills: [
-      { name: 'PostgreSQL', icon: <SiPostgresql /> },
-      { name: 'MongoDB', icon: <SiMongodb /> },
-      { name: 'Power BI', icon: <FaChartBar /> },
-      { name: 'ETL Pipelines', icon: <SiApacheairflow /> },
-      { name: 'SQL', icon: <FaDatabase /> },
-    ],
-  },
-];
+import { useLanguage } from '../context/LanguageContext';
 
 const Skills = () => {
+  const { t } = useLanguage();
+  const categoriesContext = t('skills.categories');
+
+  const skillCategories = [
+    {
+      title: categoriesContext[0].title,
+      description: categoriesContext[0].desc,
+      icon: <FaPython />,
+      color: 'linear-gradient(135deg, #3776AB, #FFD43B)',
+      skills: [
+        { name: categoriesContext[0].skills[0], icon: <SiDjango /> },
+        { name: categoriesContext[0].skills[1], icon: <SiFlask /> },
+        { name: categoriesContext[0].skills[2], icon: <SiFastapi /> },
+        { name: categoriesContext[0].skills[3], icon: <SiPandas /> },
+        { name: categoriesContext[0].skills[4], icon: <SiNumpy /> },
+        { name: categoriesContext[0].skills[5], icon: <FaPython /> },
+      ],
+    },
+    {
+      title: categoriesContext[1].title,
+      description: categoriesContext[1].desc,
+      icon: <FaReact />,
+      color: 'linear-gradient(135deg, #61DAFB, #6c63ff)',
+      skills: [
+        { name: categoriesContext[1].skills[0], icon: <FaReact /> },
+        { name: categoriesContext[1].skills[1], icon: <SiNextdotjs /> },
+        { name: categoriesContext[1].skills[2], icon: <SiRedux /> },
+        { name: categoriesContext[1].skills[3], icon: <SiJavascript /> },
+        { name: categoriesContext[1].skills[4], icon: <FaReact /> },
+      ],
+    },
+    {
+      title: categoriesContext[2].title,
+      description: categoriesContext[2].desc,
+      icon: <FaCloud />,
+      color: 'linear-gradient(135deg, #00d4aa, #4facfe)',
+      skills: [
+        { name: categoriesContext[2].skills[0], icon: <SiSelenium /> },
+        { name: categoriesContext[2].skills[1], icon: <SiDocker /> },
+        { name: categoriesContext[2].skills[2], icon: <SiGithubactions /> },
+        { name: categoriesContext[2].skills[3], icon: <FaCloud /> },
+        { name: categoriesContext[2].skills[4], icon: <FaPython /> },
+      ],
+    },
+    {
+      title: categoriesContext[3].title,
+      description: categoriesContext[3].desc,
+      icon: <FaRobot />,
+      color: 'linear-gradient(135deg, #ff6b9d, #f093fb)',
+      skills: [
+        { name: categoriesContext[3].skills[0], icon: <SiTensorflow /> },
+        { name: categoriesContext[3].skills[1], icon: <SiScikitlearn /> },
+        { name: categoriesContext[3].skills[2], icon: <SiOpenai /> },
+        { name: categoriesContext[3].skills[3], icon: <SiLangchain /> },
+        { name: categoriesContext[3].skills[4], icon: <FaRobot /> },
+      ],
+    },
+    {
+      title: categoriesContext[4].title,
+      description: categoriesContext[4].desc,
+      icon: <FaDatabase />,
+      color: 'linear-gradient(135deg, #ffd700, #ff6b9d)',
+      skills: [
+        { name: categoriesContext[4].skills[0], icon: <SiPostgresql /> },
+        { name: categoriesContext[4].skills[1], icon: <SiMongodb /> },
+        { name: categoriesContext[4].skills[2], icon: <FaChartBar /> },
+        { name: categoriesContext[4].skills[3], icon: <SiApacheairflow /> },
+        { name: categoriesContext[4].skills[4], icon: <FaDatabase /> },
+      ],
+    },
+  ];
+
   return (
     <section className="skills" id="skills">
       <div className="container">
-        <h3 className="section-title">Skills & Technologies</h3>
+        <h3 className="section-title">{t('skills.title')}</h3>
         <p className="section-subtitle">
-          The technical stack I use for engineering and data analysis.
+          {t('skills.subtitle')}
         </p>
 
         <div className="skills-grid">
