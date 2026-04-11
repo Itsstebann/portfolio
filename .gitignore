@@ -25,3 +25,9 @@ Thumbs.db
 
 # Scripts de desarrollo
 rewrite.py
+
+# Logs de build temporales
+build_full.txt
+build_log.txt
+build_error.txt
+*.log
