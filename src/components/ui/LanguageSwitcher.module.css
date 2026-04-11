@@ -1,0 +1,36 @@
+/* LanguageSwitcher.module.css */
+
+.switcher {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: border-color var(--transition-base);
+}
+
+.switcher:hover {
+  border-color: var(--color-border-hover);
+}
+
+.option {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+  font-family: var(--font-family);
+}
+
+.option.active {
+  color: var(--color-accent);
+}
+
+.divider {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin: 0 2px;
+}

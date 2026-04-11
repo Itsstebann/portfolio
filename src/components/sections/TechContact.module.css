@@ -1,0 +1,226 @@
+/* TechContact.module.css */
+
+/* ── Tech Grid ── */
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+}
+
+.techCard {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.catLabel {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+}
+
+.techItems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.techItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  transition:
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+  cursor: default;
+}
+
+.techItem:hover {
+  border-color: var(--color-accent);
+  color: var(--color-text-primary);
+}
+
+.techItem.basic {
+  opacity: 0.65;
+}
+
+.techEmoji {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.techName {
+  white-space: nowrap;
+}
+
+.basicBadge {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1px 4px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+}
+
+/* ── Contact Grid ── */
+.contactGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--gap);
+  align-items: stretch;
+}
+
+.emailWrapper {
+  grid-column: 1;
+}
+
+.emailCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  min-height: 140px;
+}
+
+.contactSubtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  margin: 0;
+}
+
+.emailRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.emailAddress {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-family: 'Courier New', monospace;
+  transition: color var(--transition-base);
+}
+
+.emailAddress:hover {
+  color: var(--color-accent);
+}
+
+.copyBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.copyBtn:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.copiedMsg {
+  font-size: var(--font-size-xs);
+  color: var(--color-green);
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Social contact cards */
+.socialContactCard {
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+}
+
+.socialContactLink {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--color-text-secondary);
+  width: 100%;
+  transition: color var(--transition-base);
+}
+
+.socialContactLink:hover {
+  color: var(--color-accent);
+}
+
+.socialContactLabel {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.socialContactHandle {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  font-family: 'Courier New', monospace;
+  margin: 0;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 60px;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  padding-bottom: 32px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .techGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .techGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .emailWrapper {
+    grid-column: 1 / 3;
+  }
+}
+
+@media (max-width: 560px) {
+  .techGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .emailWrapper {
+    grid-column: 1;
+  }
+}

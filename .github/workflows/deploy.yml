@@ -1,0 +1,48 @@
+# .github/workflows/deploy.yml
+# CI/CD: Build y deploy automático a GitHub Pages en cada push a main.
+# Demuestra conocimiento en GitHub Actions, CI/CD y automatización.
+
+name: Deploy Portfolio to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+# Permisos para escribir en gh-pages
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout del código
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+
+      # 2. Setup Node.js
+      - name: Configurar Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      # 3. Instalar dependencias (usa cache para velocidad)
+      - name: Instalar dependencias
+        run: npm ci
+
+      # 4. Build de producción con Vite
+      - name: Build de producción
+        run: npm run build
+
+      # 5. Deploy del directorio dist/ a la rama gh-pages
+      - name: Deploy a GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          commit_message: 'ci: actualiza GitHub Pages'

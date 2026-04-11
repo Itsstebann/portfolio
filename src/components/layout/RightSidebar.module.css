@@ -1,0 +1,167 @@
+/* RightSidebar.module.css */
+
+.sidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  z-index: 100;
+  padding: 24px 0;
+  border-left: 1px solid var(--color-border);
+  background: rgba(15, 15, 15, 0.85);
+  backdrop-filter: var(--blur-md);
+  -webkit-backdrop-filter: var(--blur-md);
+}
+
+/* ── Nav Links ── */
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+  justify-content: center;
+}
+
+.navItemWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition:
+    color var(--transition-base),
+    background var(--transition-base);
+}
+
+.navItem:hover {
+  color: var(--color-text-primary);
+  background: var(--color-card-hover);
+}
+
+.navItem.active {
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.activeDot {
+  position: absolute;
+  right: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 18px;
+  background: var(--color-accent);
+  border-radius: var(--radius-full);
+}
+
+/* ── Tooltip ── */
+.tooltip {
+  position: absolute;
+  right: calc(100% + 12px);
+  white-space: nowrap;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 5px 10px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(6px);
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-base);
+  font-family: var(--font-family);
+}
+
+.navItemWrapper:hover .tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Divider ── */
+.divider {
+  width: 24px;
+  height: 1px;
+  background: var(--color-border);
+  margin: 8px 0;
+}
+
+/* ── Social Links ── */
+.socialLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.socialBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  transition:
+    color var(--transition-base),
+    background var(--transition-base);
+}
+
+.socialBtn:hover {
+  color: var(--color-text-primary);
+  background: var(--color-card-hover);
+}
+
+/* ── Language Toggle ── */
+.langToggle {
+  margin-top: 8px;
+  transform: rotate(90deg);
+}
+
+/* ── Mobile: sidebar se convierte en barra inferior ── */
+@media (max-width: 768px) {
+  .sidebar {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    border-left: none;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .navLinks {
+    flex-direction: row;
+    flex: none;
+    gap: 0;
+  }
+
+  .tooltip { display: none; }
+  .activeDot { display: none; }
+  .langToggle { transform: none; margin: 0; }
+  .divider { display: none; }
+}
