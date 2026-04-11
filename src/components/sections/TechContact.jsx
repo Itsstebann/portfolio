@@ -95,7 +95,6 @@ function TechContact() {
                           ? (lang === 'es' ? 'Conocimiento básico' : 'Basic knowledge')
                           : (lang === 'es' ? 'Conocimiento avanzado' : 'Advanced knowledge')}
                       >
-                        <span className={styles.techEmoji} aria-hidden="true">{tech.emoji}</span>
                         <span className={styles.techName}>{tech.label}</span>
                         {tech.level === 'basic' && (
                           <span className={styles.basicBadge}>basic</span>

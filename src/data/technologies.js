@@ -7,44 +7,44 @@
 
 export const technologies = [
   // ── Lenguajes & Core ──────────────────────────────────
-  { id: 'python',      label: 'Python',      category: 'core',    level: 'advanced', emoji: '🐍' },
-  { id: 'sql',         label: 'SQL',         category: 'core',    level: 'advanced', emoji: '🗄️' },
+  { id: 'python',      label: 'Python',      category: 'core',    level: 'advanced' },
+  { id: 'sql',         label: 'SQL',         category: 'core',    level: 'advanced' },
 
   // ── Bases de Datos ────────────────────────────────────
-  { id: 'postgresql',  label: 'PostgreSQL',  category: 'db',      level: 'advanced', emoji: '🐘' },
-  { id: 'mysql',       label: 'MySQL',       category: 'db',      level: 'advanced', emoji: '💽' },
-  { id: 'oracle',      label: 'Oracle DB',   category: 'db',      level: 'advanced', emoji: '🔶' },
+  { id: 'postgresql',  label: 'PostgreSQL',  category: 'db',      level: 'advanced' },
+  { id: 'mysql',       label: 'MySQL',       category: 'db',      level: 'advanced' },
+  { id: 'oracle',      label: 'Oracle DB',   category: 'db',      level: 'advanced' },
 
   // ── APIs & Autenticación ──────────────────────────────
-  { id: 'rest',        label: 'REST APIs',   category: 'api',     level: 'advanced', emoji: '🔌' },
-  { id: 'json',        label: 'JSON',        category: 'api',     level: 'advanced', emoji: '📋' },
-  { id: 'jwt',         label: 'JWT',         category: 'auth',    level: 'advanced', emoji: '🔑' },
-  { id: 'oauth',       label: 'OAuth 2.0',   category: 'auth',    level: 'advanced', emoji: '🛡️' },
-  { id: 'openid',      label: 'OpenID',      category: 'auth',    level: 'advanced', emoji: '🪪' },
-  { id: 'cookie-auth', label: 'Cookie Auth', category: 'auth',    level: 'advanced', emoji: '🍪' },
+  { id: 'rest',        label: 'REST APIs',   category: 'api',     level: 'advanced' },
+  { id: 'json',        label: 'JSON',        category: 'api',     level: 'advanced' },
+  { id: 'jwt',         label: 'JWT',         category: 'auth',    level: 'advanced' },
+  { id: 'oauth',       label: 'OAuth 2.0',   category: 'auth',    level: 'advanced' },
+  { id: 'openid',      label: 'OpenID',      category: 'auth',    level: 'advanced' },
+  { id: 'cookie-auth', label: 'Cookie Auth', category: 'auth',    level: 'advanced' },
 
   // ── DevOps & Control de Versiones ─────────────────────
-  { id: 'git',         label: 'Git',         category: 'devops',  level: 'advanced', emoji: '🌿' },
-  { id: 'github',      label: 'GitHub',      category: 'devops',  level: 'advanced', emoji: '🐙' },
-  { id: 'gitlab',      label: 'GitLab',      category: 'devops',  level: 'advanced', emoji: '🦊' },
-  { id: 'docker',      label: 'Docker',      category: 'devops',  level: 'advanced', emoji: '🐳' },
-  { id: 'cicd',        label: 'CI/CD',       category: 'devops',  level: 'advanced', emoji: '⚙️' },
+  { id: 'git',         label: 'Git',         category: 'devops',  level: 'advanced' },
+  { id: 'github',      label: 'GitHub',      category: 'devops',  level: 'advanced' },
+  { id: 'gitlab',      label: 'GitLab',      category: 'devops',  level: 'advanced' },
+  { id: 'docker',      label: 'Docker',      category: 'devops',  level: 'advanced' },
+  { id: 'cicd',        label: 'CI/CD',       category: 'devops',  level: 'advanced' },
 
   // ── Seguridad & Performance ───────────────────────────
-  { id: 'security',    label: 'Web Security', category: 'security', level: 'advanced', emoji: '🔒' },
-  { id: 'hashing',     label: 'Hashing',     category: 'security', level: 'advanced', emoji: '#️⃣' },
-  { id: 'caching',     label: 'Caching',     category: 'security', level: 'advanced', emoji: '⚡' },
+  { id: 'security',    label: 'Web Security', category: 'security', level: 'advanced' },
+  { id: 'hashing',     label: 'Hashing',     category: 'security', level: 'advanced' },
+  { id: 'caching',     label: 'Caching',     category: 'security', level: 'advanced' },
 
   // ── AI & Integraciones ────────────────────────────────
-  { id: 'ai',          label: 'AI / LLMs',   category: 'ai',      level: 'advanced', emoji: '🤖' },
-  { id: 'prompting',   label: 'Prompting',   category: 'ai',      level: 'advanced', emoji: '💬' },
-  { id: 'ai-agents',   label: 'AI Agents',   category: 'ai',      level: 'advanced', emoji: '🧠' },
-  { id: 'integrations',label: 'Integrations',category: 'ai',      level: 'advanced', emoji: '🔗' },
+  { id: 'ai',          label: 'AI / LLMs',   category: 'ai',      level: 'advanced' },
+  { id: 'prompting',   label: 'Prompting',   category: 'ai',      level: 'advanced' },
+  { id: 'ai-agents',   label: 'AI Agents',   category: 'ai',      level: 'advanced' },
+  { id: 'integrations',label: 'Integrations',category: 'ai',      level: 'advanced' },
 
   // ── Frontend Básico ───────────────────────────────────
-  { id: 'html',        label: 'HTML',        category: 'frontend', level: 'basic',    emoji: '🌐' },
-  { id: 'css',         label: 'CSS',         category: 'frontend', level: 'basic',    emoji: '🎨' },
-  { id: 'javascript',  label: 'JavaScript',  category: 'frontend', level: 'basic',    emoji: '✨' },
+  { id: 'html',        label: 'HTML',        category: 'frontend', level: 'basic' },
+  { id: 'css',         label: 'CSS',         category: 'frontend', level: 'basic' },
+  { id: 'javascript',  label: 'JavaScript',  category: 'frontend', level: 'basic' },
 ];
 
 /**

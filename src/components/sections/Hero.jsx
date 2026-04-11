@@ -110,7 +110,7 @@ function Hero() {
         <BentoCard className={styles.infoCell} tilt={false}>
           <div className={styles.infoGrid}>
             {[
-              { label: lang === 'es' ? 'Ubicación' : 'Location',   value: 'Colombia 🇨🇴' },
+              { label: lang === 'es' ? 'Ubicación' : 'Location',   value: 'Colombia' },
               { label: lang === 'es' ? 'Experiencia' : 'Experience', value: '3+ años' },
               { label: 'Stack',                                       value: 'Python · SQL · APIs' },
               { label: lang === 'es' ? 'Enfoque' : 'Focus',          value: 'Backend · DevOps · AI' },
