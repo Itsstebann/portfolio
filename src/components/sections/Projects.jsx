@@ -25,77 +25,77 @@ function ProjectCard({ project, t }) {
 
   return (
     <BentoCard
+      href={project.link}
       className={`${styles.projectCard} ${project.featured ? styles.featured : ''}`}
       tilt={!project.featured}
     >
       {/* Featured badge */}
       {project.featured && (
         <div className={styles.featuredBadge}>
-          <a href="web-production-7c5f6.up.railway.app"
           <Star size={12} fill="currentColor" />
           {lang === 'es' ? 'Proyecto destacado' : 'Featured project'}
-        </a>
+
         </div>
-  )
-}
+      )
+      }
 
-{/* Header */ }
-<div className={styles.cardHeader}>
-  <div className={styles.iconWrapper} aria-hidden="true">
-    <FolderGit2 size={24} strokeWidth={1.6} />
-  </div>
-  <div className={styles.links}>
-    {project.github && (
-      <a
-        href={project.github}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles.linkBtn}
-        aria-label="GitHub"
-        title="GitHub"
-      >
-        <Github size={18} strokeWidth={1.6} />
-      </a>
-    )}
-    {project.demo && (
-      <a
-        href={project.demo}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles.linkBtn}
-        aria-label="Demo"
-        title="Demo"
-      >
-        <ExternalLink size={18} strokeWidth={1.6} />
-      </a>
-    )}
-  </div>
-</div>
+      {/* Header */}
+      <div className={styles.cardHeader}>
+        <div className={styles.iconWrapper} aria-hidden="true">
+          <FolderGit2 size={24} strokeWidth={1.6} />
+        </div>
+        <div className={styles.links}>
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.linkBtn}
+              aria-label="GitHub"
+              title="GitHub"
+            >
+              <Github size={18} strokeWidth={1.6} />
+            </a>
+          )}
+          {project.demo && (
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.linkBtn}
+              aria-label="Demo"
+              title="Demo"
+            >
+              <ExternalLink size={18} strokeWidth={1.6} />
+            </a>
+          )}
+        </div>
+      </div>
 
-{/* Title & Description */ }
+      {/* Title & Description */}
       <h3 className={styles.title}>{localized.title}</h3>
       <p className={styles.description}>{localized.description}</p>
 
-{/* Highlights — solo en featured */ }
-{
-  project.featured && localized.highlights && (
-    <ul className={styles.highlights}>
-      {localized.highlights.map((h, i) => (
-        <li key={i} className={styles.highlight}>
-          <span className={styles.highlightDot} aria-hidden="true" />
-          {h}
-        </li>
-      ))}
-    </ul>
-  )
-}
+      {/* Highlights — solo en featured */}
+      {
+        project.featured && localized.highlights && (
+          <ul className={styles.highlights}>
+            {localized.highlights.map((h, i) => (
+              <li key={i} className={styles.highlight}>
+                <span className={styles.highlightDot} aria-hidden="true" />
+                {h}
+              </li>
+            ))}
+          </ul>
+        )
+      }
 
-{/* Tech tags */ }
-<div className={styles.techTags}>
-  {project.techs.map((tech) => (
-    <span key={tech} className="tag">{tech}</span>
-  ))}
-</div>
+      {/* Tech tags */}
+      <div className={styles.techTags}>
+        {project.techs.map((tech) => (
+          <span key={tech} className="tag">{tech}</span>
+        ))}
+      </div>
     </BentoCard >
   );
 }
