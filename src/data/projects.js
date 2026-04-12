@@ -8,14 +8,15 @@
 
 export const projects = [
   {
-    id:       'sistema-citas-medicas',
+    id: 'sistema-citas-medicas',
     featured: true,                         // → Hero cell del Bento
-    github:   'https://github.com/Itsstebann/sistema-citas-medicas',
-    demo:     null,
-    image:    null,                         // Se genera imagen placeholder
-    techs:    ['Python', 'PostgreSQL', 'REST API', 'JWT', 'Docker'],
+    github: 'https://github.com/Itsstebann/sistema-citas-medicas',
+    link: 'web-production-7c5f6.up.railway.app',
+    demo: null,
+    image: null,                         // Se genera imagen placeholder
+    techs: ['Python', 'PostgreSQL', 'REST API', 'JWT', 'Docker'],
     es: {
-      title:       'Sistema de Citas Médicas',
+      title: 'Sistema de Citas Médicas',
       description: 'Backend RESTful completo para la gestión eficiente y segura de agendas médicas y pacientes. Implementa autenticación JWT, control de roles, y arquitectura de base de datos relacional optimizada.',
       highlights: [
         'Autenticación y autorización con JWT y control de roles (admin/médico/paciente)',
@@ -25,7 +26,7 @@ export const projects = [
       ],
     },
     en: {
-      title:       'Medical Appointment System',
+      title: 'Medical Appointment System',
       description: 'Full RESTful backend for efficient and secure management of medical schedules and patients. Implements JWT authentication, role-based access control, and optimized relational database architecture.',
       highlights: [
         'JWT authentication and authorization with role-based control (admin/doctor/patient)',
