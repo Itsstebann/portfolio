@@ -1,30 +1,30 @@
 /* =========================================================
    DESIGN TOKENS – Portfolio David Rodriguez
    Centralized CSS Custom Properties (variables)
-   Complexity reference: O(1) – CSS var lookups are constant
+   Light Mode – Premium warm palette
    ========================================================= */
 
 :root {
-  /* ── Color Palette: Dark Glass ── */
-  --color-bg:           #0f0f0f;
-  --color-surface:      #1a1a1a;
-  --color-surface-2:    #222222;
-  --color-card:         rgba(255, 255, 255, 0.04);
-  --color-card-hover:   rgba(255, 255, 255, 0.07);
-  --color-border:       rgba(255, 255, 255, 0.08);
-  --color-border-hover: rgba(255, 255, 255, 0.16);
+  /* ── Color Palette: Light Premium ── */
+  --color-bg:           #f7f5f2;
+  --color-surface:      #ffffff;
+  --color-surface-2:    #f0ede8;
+  --color-card:         rgba(255, 255, 255, 0.72);
+  --color-card-hover:   rgba(255, 255, 255, 0.92);
+  --color-border:       rgba(0, 0, 0, 0.08);
+  --color-border-hover: rgba(0, 0, 0, 0.16);
 
   /* ── Text ── */
-  --color-text-primary:   #f0f0f0;
-  --color-text-secondary: #a0a0a0;
-  --color-text-muted:     #606060;
+  --color-text-primary:   #1a1a2e;
+  --color-text-secondary: #5a5a72;
+  --color-text-muted:     #9393a8;
 
   /* ── Accent Colors ── */
-  --color-accent:       #7c6aff;
-  --color-accent-soft:  rgba(124, 106, 255, 0.15);
-  --color-green:        #22c55e;
-  --color-green-soft:   rgba(34, 197, 94, 0.15);
-  --color-amber:        #f59e0b;
+  --color-accent:       #5b4cdb;
+  --color-accent-soft:  rgba(91, 76, 219, 0.10);
+  --color-green:        #16a34a;
+  --color-green-soft:   rgba(22, 163, 74, 0.10);
+  --color-amber:        #d97706;
 
   /* ── Typography ── */
   --font-family:     'Plus Jakarta Sans', system-ui, sans-serif;
@@ -52,9 +52,9 @@
   --radius-full: 9999px;
 
   /* ── Shadows ── */
-  --shadow-card:       0 4px 24px rgba(0, 0, 0, 0.4);
-  --shadow-card-hover: 0 8px 40px rgba(0, 0, 0, 0.6);
-  --shadow-glow:       0 0 24px rgba(124, 106, 255, 0.2);
+  --shadow-card:       0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.06), 0 8px 32px rgba(0, 0, 0, 0.10);
+  --shadow-glow:       0 0 24px rgba(91, 76, 219, 0.12);
 
   /* ── Transitions ── */
   --transition-fast:   150ms ease;

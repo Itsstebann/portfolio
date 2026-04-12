@@ -14,7 +14,7 @@
   z-index: 100;
   padding: 24px 0;
   border-left: 1px solid var(--color-border);
-  background: rgba(15, 15, 15, 0.85);
+  background: rgba(255, 255, 255, 0.82);
   backdrop-filter: var(--blur-md);
   -webkit-backdrop-filter: var(--blur-md);
 }
@@ -146,10 +146,15 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: auto;
+    min-height: 56px;
     width: 100%;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    padding: 8px 12px;
+    padding-bottom: calc(8px + env(safe-area-inset-bottom));
     border-left: none;
     border-top: 1px solid var(--color-border);
   }
@@ -160,8 +165,21 @@
     gap: 0;
   }
 
+  .navItem {
+    width: 38px;
+    height: 38px;
+  }
+
+  /* Ocultar social links en móvil — están en la sección Contacto */
+  .socialLinks { display: none; }
   .tooltip { display: none; }
   .activeDot { display: none; }
-  .langToggle { transform: none; margin: 0; }
   .divider { display: none; }
+
+  /* Language toggle compacto y sin rotación */
+  .langToggle {
+    transform: none;
+    margin: 0;
+    margin-left: 4px;
+  }
 }

@@ -9,7 +9,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import {
-  User, Briefcase, FolderGit2, Cpu, Mail, Github, Linkedin,
+  User, Briefcase, GraduationCap, FolderGit2, Cpu, Mail, Github, Linkedin,
 } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { content } from '../../data/content';
@@ -20,6 +20,7 @@ import styles from './RightSidebar.module.css';
 const SECTIONS = [
   { id: 'about',      Icon: User },
   { id: 'experience', Icon: Briefcase },
+  { id: 'education',  Icon: GraduationCap },
   { id: 'projects',   Icon: FolderGit2 },
   { id: 'tech',       Icon: Cpu },
   { id: 'contact',    Icon: Mail },
