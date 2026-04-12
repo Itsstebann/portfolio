@@ -25,7 +25,6 @@ function ProjectCard({ project, t }) {
 
   return (
     <BentoCard
-      href={project.link}
       className={`${styles.projectCard} ${project.featured ? styles.featured : ''}`}
       tilt={!project.featured}
     >
@@ -34,10 +33,8 @@ function ProjectCard({ project, t }) {
         <div className={styles.featuredBadge}>
           <Star size={12} fill="currentColor" />
           {lang === 'es' ? 'Proyecto destacado' : 'Featured project'}
-
         </div>
-      )
-      }
+      )}
 
       {/* Header */}
       <div className={styles.cardHeader}>
@@ -77,18 +74,16 @@ function ProjectCard({ project, t }) {
       <p className={styles.description}>{localized.description}</p>
 
       {/* Highlights — solo en featured */}
-      {
-        project.featured && localized.highlights && (
-          <ul className={styles.highlights}>
-            {localized.highlights.map((h, i) => (
-              <li key={i} className={styles.highlight}>
-                <span className={styles.highlightDot} aria-hidden="true" />
-                {h}
-              </li>
-            ))}
-          </ul>
-        )
-      }
+      {project.featured && localized.highlights && (
+        <ul className={styles.highlights}>
+          {localized.highlights.map((h, i) => (
+            <li key={i} className={styles.highlight}>
+              <span className={styles.highlightDot} aria-hidden="true" />
+              {h}
+            </li>
+          ))}
+        </ul>
+      )}
 
       {/* Tech tags */}
       <div className={styles.techTags}>
@@ -96,7 +91,7 @@ function ProjectCard({ project, t }) {
           <span key={tech} className="tag">{tech}</span>
         ))}
       </div>
-    </BentoCard >
+    </BentoCard>
   );
 }
 
