@@ -9,8 +9,13 @@ import { Github, Linkedin, ArrowDown, Terminal } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { content } from '../../data/content';
 import BentoCard, { cardVariants } from '../ui/BentoCard';
+import MemojiAvatar from '../ui/MemojiAvatar';
 import StatusWidget from '../ui/StatusWidget';
 import styles from './Hero.module.css';
+
+// Rutas de los Memojis (servidos desde public/)
+const MEMOJI_LAPTOP = `${import.meta.env.BASE_URL}assets/memoji/memoji-laptop.png`;
+const MEMOJI_WINK   = `${import.meta.env.BASE_URL}assets/memoji/memoji-wink.png`;
 
 // Variante del contenedor staggered — O(1) config
 const containerVariants = {
@@ -73,6 +78,19 @@ function Hero() {
                 {t.ctaSecond}
               </button>
             </div>
+          </div>
+        </BentoCard>
+
+        {/* ─── Memoji Avatar Card ─── */}
+        <BentoCard className={styles.memojiCell} tilt={false}>
+          <div className={styles.memojiContainer}>
+            <MemojiAvatar
+              src={MEMOJI_LAPTOP}
+              hoverSrc={MEMOJI_WINK}
+              alt="David Rodriguez Memoji"
+              size={140}
+              floatRange={6}
+            />
           </div>
         </BentoCard>
 

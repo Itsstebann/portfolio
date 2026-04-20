@@ -88,6 +88,17 @@
   min-height: 140px;
 }
 
+.emailTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.contactMemoji {
+  flex-shrink: 0;
+}
+
 .contactSubtitle {
   font-size: var(--font-size-lg);
   color: var(--color-text-secondary);
@@ -217,5 +228,9 @@
 
   .emailWrapper {
     grid-column: 1;
+  }
+
+  .contactMemoji {
+    display: none;
   }
 }

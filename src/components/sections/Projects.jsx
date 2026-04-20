@@ -42,6 +42,18 @@ function ProjectCard({ project, t }) {
           <FolderGit2 size={24} strokeWidth={1.6} />
         </div>
         <div className={styles.links}>
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.linkBtn}
+              aria-label="Live"
+              title={lang === 'es' ? 'Ver en vivo' : 'Live site'}
+            >
+              <ExternalLink size={18} strokeWidth={1.6} />
+            </a>
+          )}
           {project.github && (
             <a
               href={project.github}

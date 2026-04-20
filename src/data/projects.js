@@ -11,7 +11,7 @@ export const projects = [
     id: 'sistema-citas-medicas',
     featured: true,                         // → Hero cell del Bento
     github: 'https://github.com/Itsstebann/sistema-citas-medicas',
-    link: 'web-production-7c5f6.up.railway.app',
+    link: 'https://web-production-7c5f6.up.railway.app/',
     demo: null,
     image: null,                         // Se genera imagen placeholder
     techs: ['Python', 'PostgreSQL', 'REST API', 'JWT', 'Docker'],

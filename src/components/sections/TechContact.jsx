@@ -13,7 +13,10 @@ import { useLanguage } from '../../context/LanguageContext';
 import { content } from '../../data/content';
 import { technologies } from '../../data/technologies';
 import BentoCard, { cardVariants } from '../ui/BentoCard';
+import MemojiAvatar from '../ui/MemojiAvatar';
 import styles from './TechContact.module.css';
+
+const MEMOJI_WAVE = `${import.meta.env.BASE_URL}assets/memoji/memoji-wave.png`;
 
 const CONTACT_EMAIL = 'devstack.drodriguez@gmail.com';
 
@@ -126,28 +129,39 @@ function TechContact() {
           {/* Email card (grande) */}
           <motion.div variants={cardVariants} className={styles.emailWrapper}>
             <BentoCard className={styles.emailCard} tilt={false}>
-              <p className={styles.contactSubtitle}>{t.contact.subtitle}</p>
-              <div className={styles.emailRow}>
-                <a href={`mailto:${CONTACT_EMAIL}`} className={styles.emailAddress}>
-                  {CONTACT_EMAIL}
-                </a>
-                <button
-                  className={styles.copyBtn}
-                  onClick={handleCopyEmail}
-                  aria-label={t.contact.copySuccess}
-                  title="Copiar email"
-                >
-                  <AnimatePresence mode="wait" initial={false}>
-                    {copied
-                      ? <motion.span key="check" initial={{ scale: 0 }} animate={{ scale: 1 }}><Check size={16} /></motion.span>
-                      : <motion.span key="copy"  initial={{ scale: 0 }} animate={{ scale: 1 }}><Copy size={16} /></motion.span>
-                    }
-                  </AnimatePresence>
-                </button>
+              <div className={styles.emailTop}>
+                <div>
+                  <p className={styles.contactSubtitle}>{t.contact.subtitle}</p>
+                  <div className={styles.emailRow}>
+                    <a href={`mailto:${CONTACT_EMAIL}`} className={styles.emailAddress}>
+                      {CONTACT_EMAIL}
+                    </a>
+                    <button
+                      className={styles.copyBtn}
+                      onClick={handleCopyEmail}
+                      aria-label={t.contact.copySuccess}
+                      title="Copiar email"
+                    >
+                      <AnimatePresence mode="wait" initial={false}>
+                        {copied
+                          ? <motion.span key="check" initial={{ scale: 0 }} animate={{ scale: 1 }}><Check size={16} /></motion.span>
+                          : <motion.span key="copy"  initial={{ scale: 0 }} animate={{ scale: 1 }}><Copy size={16} /></motion.span>
+                        }
+                      </AnimatePresence>
+                    </button>
+                  </div>
+                  {copied && (
+                    <p className={styles.copiedMsg}>{t.contact.copySuccess}</p>
+                  )}
+                </div>
+                <MemojiAvatar
+                  src={MEMOJI_WAVE}
+                  alt="Memoji saludando"
+                  size={100}
+                  floatRange={5}
+                  className={styles.contactMemoji}
+                />
               </div>
-              {copied && (
-                <p className={styles.copiedMsg}>{t.contact.copySuccess}</p>
-              )}
             </BentoCard>
           </motion.div>
 
