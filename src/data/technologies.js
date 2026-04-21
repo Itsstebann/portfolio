@@ -8,6 +8,7 @@
 export const technologies = [
   // ── Lenguajes & Core ──────────────────────────────────
   { id: 'python',      label: 'Python',      category: 'core',    level: 'advanced' },
+  { id: 'javascript',  label: 'JavaScript',  category: 'core',    level: 'advanced' },
   { id: 'sql',         label: 'SQL',         category: 'core',    level: 'advanced' },
 
   // ── Bases de Datos ────────────────────────────────────
@@ -39,12 +40,15 @@ export const technologies = [
   { id: 'ai',          label: 'AI / LLMs',   category: 'ai',      level: 'advanced' },
   { id: 'prompting',   label: 'Prompting',   category: 'ai',      level: 'advanced' },
   { id: 'ai-agents',   label: 'AI Agents',   category: 'ai',      level: 'advanced' },
+  { id: 'claude-code', label: 'Claude Code', category: 'ai',      level: 'advanced' },
+  { id: 'codex',       label: 'Codex',       category: 'ai',      level: 'advanced' },
   { id: 'integrations',label: 'Integrations',category: 'ai',      level: 'advanced' },
 
-  // ── Frontend Básico ───────────────────────────────────
+  // ── Frontend ───────────────────────────────────────────
   { id: 'html',        label: 'HTML',        category: 'frontend', level: 'basic' },
   { id: 'css',         label: 'CSS',         category: 'frontend', level: 'basic' },
-  { id: 'javascript',  label: 'JavaScript',  category: 'frontend', level: 'basic' },
+  { id: 'react',       label: 'React',       category: 'frontend', level: 'advanced' },
+  { id: 'bootstrap',   label: 'Bootstrap',   category: 'frontend', level: 'basic' },
 ];
 
 /**
