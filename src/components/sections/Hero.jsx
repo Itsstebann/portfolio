@@ -81,16 +81,25 @@ function Hero() {
           </div>
         </BentoCard>
 
-        {/* ─── Memoji Avatar Card ─── */}
+        {/* ─── Memoji + Personal Card ─── */}
         <BentoCard className={styles.memojiCell} tilt={false}>
-          <div className={styles.memojiContainer}>
-            <MemojiAvatar
-              src={MEMOJI_LAPTOP}
-              hoverSrc={MEMOJI_WINK}
-              alt="David Rodriguez Memoji"
-              size={140}
-              floatRange={6}
-            />
+          <div className={styles.memojiWrapper}>
+            <div className={styles.memojiContainer}>
+              <MemojiAvatar
+                src={MEMOJI_LAPTOP}
+                hoverSrc={MEMOJI_WINK}
+                alt="David Rodriguez Memoji"
+                size={120}
+                floatRange={6}
+              />
+            </div>
+            <div className={styles.personalBlock}>
+              <p className={styles.personalText}>{t.personal}</p>
+              <blockquote className={styles.quote}>
+                <span className={styles.quoteText}>{t.quote}</span>
+                <cite className={styles.quoteAuthor}>{t.quoteAuthor}</cite>
+              </blockquote>
+            </div>
           </div>
         </BentoCard>
 

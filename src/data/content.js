@@ -23,6 +23,9 @@ export const content = {
       available: 'Disponible para trabajar',
       cta: 'Ver proyectos',
       ctaSecond: 'Contáctame',
+      personal: 'Disfruto crear, innovar y aprender sobre todo aquello que despierta mi curiosidad. Me apasionan profundamente el desarrollo de software y la ciberseguridad. Mi objetivo es integrar las habilidades blandas adquiridas en la administración de empresas con el conocimiento técnico de la ingeniería de sistemas, construyendo un perfil integral y valioso para las organizaciones.',
+      quote: '"Siempre parece imposible hasta que se hace."',
+      quoteAuthor: '— Nelson Mandela',
     },
     experience: {
       title: 'Experiencia',
@@ -117,6 +120,9 @@ export const content = {
       available: 'Available for work',
       cta: 'View projects',
       ctaSecond: 'Contact me',
+      personal: 'I enjoy creating, innovating, and continuously learning about everything that sparks my curiosity. I am deeply passionate about software development and cybersecurity. My goal is to integrate the soft skills acquired through business administration with the technical expertise of systems engineering, building a well-rounded and valuable professional profile.',
+      quote: '"It always seems impossible until it is done."',
+      quoteAuthor: '— Nelson Mandela',
     },
     experience: {
       title: 'Experience',
