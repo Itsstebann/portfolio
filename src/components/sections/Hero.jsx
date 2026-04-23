@@ -5,7 +5,7 @@
  */
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, ArrowDown, Terminal } from 'lucide-react';
+import { Github, Linkedin, ArrowDown, Terminal, Command } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { content } from '../../data/content';
 import BentoCard, { cardVariants } from '../ui/BentoCard';
@@ -35,6 +35,15 @@ function Hero() {
   const scrollToContact = () =>
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
 
+  // Despachar Ctrl+K sintético para abrir el CommandPalette
+  const openCommandPalette = () => {
+    window.dispatchEvent(new KeyboardEvent('keydown', {
+      key: 'k',
+      ctrlKey: true,
+      bubbles: true,
+    }));
+  };
+
   return (
     <section id="about" className="section">
       <motion.div
@@ -43,7 +52,7 @@ function Hero() {
         initial="hidden"
         animate="visible"
       >
-        {/* ─── Hero Cell (2x2 grande) ─── */}
+        {/* --- Hero Cell (2x2 grande) --- */}
         <BentoCard className={styles.heroCell} size="xl">
           <div className={styles.heroContent}>
             {/* Top row */}
@@ -53,6 +62,22 @@ function Hero() {
                 <Terminal size={12} />
                 <span>python dev</span>
               </div>
+              <motion.button
+                className={styles.kbdHint}
+                onClick={openCommandPalette}
+                initial={{ opacity: 0, x: 10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 1.2, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                aria-label={lang === 'es' ? 'Abrir navegación rápida' : 'Open quick navigation'}
+                title={lang === 'es' ? 'Navegación rápida' : 'Quick navigation'}
+              >
+                <Command size={12} className={styles.kbdHintIcon} />
+                <span className={styles.kbdHintLabel}>
+                  {lang === 'es' ? 'Navegación rápida' : 'Quick nav'}
+                </span>
+                <kbd className={styles.kbdKey}>Ctrl</kbd>
+                <kbd className={styles.kbdKey}>K</kbd>
+              </motion.button>
             </div>
 
             {/* Main text */}

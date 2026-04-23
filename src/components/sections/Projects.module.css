@@ -1,13 +1,14 @@
-/* Projects.module.css */
+/* Projects.module.css – Estilos de la sección de proyectos */
 
+/* ── Bento Grid: 3 columnas en desktop ── */
 .bentoGrid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--gap);
 }
 
 .featuredWrapper {
-  grid-column: 1 / 3; /* Ocupa todo el ancho */
+  grid-column: 1 / -1;
 }
 
 .cardWrapper {
@@ -16,18 +17,228 @@
 
 /* ── Project Card ── */
 .projectCard {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 16px;
   height: 100%;
+  cursor: pointer;
+  overflow: hidden;
 }
 
+/* ── Shimmer Line (borde superior brillante en hover) ── */
+.shimmerLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-accent) 50%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.projectCard:hover .shimmerLine {
+  opacity: 1;
+  animation: shimmer-slide 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer-slide {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* ── Glow Border en hover ── */
+.projectCard::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(91, 76, 219, 0.0) 0%,
+    rgba(91, 76, 219, 0.0) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.projectCard:hover::after {
+  opacity: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(91, 76, 219, 0.06) 0%,
+    rgba(139, 108, 246, 0.04) 50%,
+    rgba(192, 132, 252, 0.06) 100%
+  );
+}
+
+/* ── Hover Overlay con doble CTA ── */
+.hoverOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 24px;
+  background: linear-gradient(
+    180deg,
+    transparent 40%,
+    rgba(26, 26, 46, 0.85) 100%
+  );
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+  pointer-events: none;
+  z-index: 2;
+  border-radius: inherit;
+}
+
+.projectCard:hover .hoverOverlay {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Contenedor de los dos botones */
+.overlayButtons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Botón base del overlay */
+.overlayCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 16px;
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
+  text-decoration: none;
+}
+
+/* Botón "Ver repo": estilo outline */
+.ctaRepo {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.ctaRepo:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.04);
+  color: #ffffff;
+}
+
+/* Botón "Ver demo": estilo accent sólido */
+.ctaDemo {
+  background: rgba(91, 76, 219, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.ctaDemo:hover {
+  background: rgba(91, 76, 219, 1);
+  transform: scale(1.04);
+  color: #ffffff;
+}
+
+.ctaArrow {
+  transition: transform 0.3s ease;
+}
+
+.ctaDemo:hover .ctaArrow {
+  transform: translateX(2px) translateY(-2px);
+}
+
+/* ── Icon morphing en hover ── */
+.iconWrapper {
+  color: var(--color-accent);
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.iconDefault,
+.iconHover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.iconDefault {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.iconHover {
+  opacity: 0;
+  transform: scale(0.7) rotate(-10deg);
+}
+
+.projectCard:hover .iconDefault {
+  opacity: 0;
+  transform: scale(0.7) rotate(10deg);
+}
+
+.projectCard:hover .iconHover {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+/* ── Header con subtitle ── */
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Subtitle badge (Backend/API, Frontend, Fullstack) */
+.subtitleBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--color-surface-2);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+
+/* Featured */
 .featured {
-  /* La celda grande tiene más padding visualmente */
   padding: 32px;
 }
 
-/* Featured badge */
 .featuredBadge {
   display: inline-flex;
   align-items: center;
@@ -49,10 +260,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.iconWrapper {
-  color: var(--color-accent);
+  position: relative;
+  z-index: 1;
 }
 
 .links {
@@ -73,6 +282,8 @@
     color var(--transition-base),
     border-color var(--transition-base),
     background var(--transition-base);
+  position: relative;
+  z-index: 3;
 }
 
 .linkBtn:hover {
@@ -86,6 +297,8 @@
   font-size: var(--font-size-xl);
   font-weight: 700;
   color: var(--color-text-primary);
+  position: relative;
+  z-index: 1;
 }
 
 /* Description */
@@ -94,6 +307,8 @@
   color: var(--color-text-secondary);
   line-height: 1.7;
   margin: 0;
+  position: relative;
+  z-index: 1;
 }
 
 /* Highlights */
@@ -104,6 +319,8 @@
   gap: 8px;
   border-left: 2px solid var(--color-accent-soft);
   padding-left: 16px;
+  position: relative;
+  z-index: 1;
 }
 
 .highlight {
@@ -130,9 +347,17 @@
   flex-wrap: wrap;
   gap: 6px;
   margin-top: auto;
+  position: relative;
+  z-index: 1;
 }
 
 /* ── Responsive ── */
+@media (max-width: 1024px) {
+  .bentoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .bentoGrid {
     grid-template-columns: 1fr;
@@ -140,5 +365,14 @@
 
   .featuredWrapper {
     grid-column: 1;
+  }
+
+  /* En mobile sin hover, el overlay no aparece */
+  .hoverOverlay {
+    display: none;
+  }
+
+  .shimmerLine {
+    display: none;
   }
 }

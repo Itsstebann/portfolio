@@ -1,13 +1,13 @@
 /**
  * Projects.jsx – Sección de proyectos personales
  * Bento Grid con el proyecto estrella ocupando mayor espacio.
- * Hover: zoom en imagen + slide-up de overlay con tech tags.
+ * Hover: shimmer line + glow border + overlay con doble CTA + icon morphing.
  *
  * Complejidad de renderizado: O(n) donde n = proyectos
  */
 
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Star, FolderGit2 } from 'lucide-react';
+import { Github, ExternalLink, Star, FolderGit2, ArrowUpRight, Code2, Globe } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { content } from '../../data/content';
 import { projects } from '../../data/projects';
@@ -19,15 +19,21 @@ const containerVariants = {
   visible: { transition: { staggerChildren: 0.12, delayChildren: 0.1 } },
 };
 
-function ProjectCard({ project, t }) {
+function ProjectCard({ project }) {
   const { lang } = useLanguage();
   const localized = project[lang];
+
+  const repoLabel = lang === 'es' ? 'Ver repo' : 'View repo';
+  const demoLabel = lang === 'es' ? 'Ver demo' : 'View demo';
 
   return (
     <BentoCard
       className={`${styles.projectCard} ${project.featured ? styles.featured : ''}`}
       tilt={!project.featured}
     >
+      {/* Shimmer line animado en hover */}
+      <div className={styles.shimmerLine} aria-hidden="true" />
+
       {/* Featured badge */}
       {project.featured && (
         <div className={styles.featuredBadge}>
@@ -38,8 +44,15 @@ function ProjectCard({ project, t }) {
 
       {/* Header */}
       <div className={styles.cardHeader}>
-        <div className={styles.iconWrapper} aria-hidden="true">
-          <FolderGit2 size={24} strokeWidth={1.6} />
+        <div className={styles.headerLeft}>
+          <div className={styles.iconWrapper} aria-hidden="true">
+            <FolderGit2 size={24} strokeWidth={1.6} className={styles.iconDefault} />
+            <ArrowUpRight size={24} strokeWidth={1.6} className={styles.iconHover} />
+          </div>
+          {/* Subtitle badge (Backend/API, Frontend, Fullstack) */}
+          {localized.subtitle && (
+            <span className={styles.subtitleBadge}>{localized.subtitle}</span>
+          )}
         </div>
         <div className={styles.links}>
           {project.link && (
@@ -66,22 +79,10 @@ function ProjectCard({ project, t }) {
               <Github size={18} strokeWidth={1.6} />
             </a>
           )}
-          {project.demo && (
-            <a
-              href={project.demo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.linkBtn}
-              aria-label="Demo"
-              title="Demo"
-            >
-              <ExternalLink size={18} strokeWidth={1.6} />
-            </a>
-          )}
         </div>
       </div>
 
-      {/* Title & Description */}
+      {/* Title y Description */}
       <h3 className={styles.title}>{localized.title}</h3>
       <p className={styles.description}>{localized.description}</p>
 
@@ -102,6 +103,35 @@ function ProjectCard({ project, t }) {
         {project.techs.map((tech) => (
           <span key={tech} className="tag">{tech}</span>
         ))}
+      </div>
+
+      {/* Hover Overlay con doble CTA */}
+      <div className={styles.hoverOverlay} aria-hidden="true">
+        <div className={styles.overlayButtons}>
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.overlayCta} ${styles.ctaRepo}`}
+            >
+              <Code2 size={15} />
+              {repoLabel}
+            </a>
+          )}
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.overlayCta} ${styles.ctaDemo}`}
+            >
+              <Globe size={15} />
+              {demoLabel}
+              <ArrowUpRight size={14} className={styles.ctaArrow} />
+            </a>
+          )}
+        </div>
       </div>
     </BentoCard>
   );
@@ -131,7 +161,7 @@ function Projects() {
             variants={cardVariants}
             className={project.featured ? styles.featuredWrapper : styles.cardWrapper}
           >
-            <ProjectCard project={project} t={t} />
+            <ProjectCard project={project} />
           </motion.div>
         ))}
       </motion.div>
